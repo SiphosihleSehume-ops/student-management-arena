@@ -6,34 +6,57 @@ import java.util.List;
 public class Assignment {
 
     // TODO: declare private fields:
-    // assignmentId (int)
-    // title (String)
-    // totalMarks (int)
-    // submissions (List<Submission>)
+    private int assignmentId;
+    private String title;
+    private int totalMarks;
+    private List<Submission> submissions;
 
     // TODO: implement constructor:
-    // Assignment(int assignmentId, String title, int totalMarks)
-    //
-    // Rules:
-    // - totalMarks cannot be negative
-    // - totalMarks cannot exceed 100
-    // - initialise submissions as new ArrayList<>()
+    public Assignment(int assignmentId, String title, int totalMarks) {
+        if (totalMarks < 0) throw new IllegalArgumentException("Marks cannot be negative");
+        if (totalMarks > 100) throw new IllegalArgumentException("Marks cannot exceed 100");
 
+        this.totalMarks = totalMarks;
+        this.assignmentId = assignmentId;
+        this.title = title;
+        this.submissions = new ArrayList<>();
+
+    }
     // TODO: implement getters:
-    // int getAssignmentId()
-    // String getTitle()
-    // int getTotalMarks()
+
+    public int getAssignmentId() {
+        return assignmentId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public int getTotalMarks() {
+        return totalMarks;
+    }
 
     // TODO: implement addSubmission(Submission submission)
-    // - add submission to submissions list
-
+    public void addSubmission(Submission submission) {
+        submissions.add(submission);
+    }
     // TODO: implement getSubmissions()
-    // - return defensive copy
-
+    public List<Submission> getSubmissions() {
+        return new ArrayList<>(submissions);
+    }
     // TODO: implement getSubmissionCount()
-    // - return number of submissions
-
+    public int getSubmissionCount() {
+        return submissions.size();
+    }
     // TODO: override toString()
-    // Example:
-    // Assignment: OOP Project (100 Marks)
+
+    @Override
+    public String toString() {
+        return "Assignment{" +
+                "assignmentId=" + assignmentId +
+                ", title='" + title + '\'' +
+                ", totalMarks=" + totalMarks +
+                ", submissions=" + submissions +
+                '}';
+    }
 }

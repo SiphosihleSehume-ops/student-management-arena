@@ -17,17 +17,17 @@ public class CampusAcademySystem extends AcademySystem {
                             + student.getName());
         }
     }
-
-    public void assignClassroom(Student student,
-                                Classroom classroom) {
-        classroomAssignments.put(student, classroom);
-    }
-
-    public Classroom getClassroom(Student student) {
-        return classroomAssignments.getForward(student);
-    }
-
-    public Student getStudent(Classroom classroom) {
-        return classroomAssignments.getReverse(classroom);
-    }
+//
+//    public void assignClassroom(Student student,
+//                                Classroom classroom) {
+//        classroomMappings.put(student, classroom);
+//    }
+//
+//    public Classroom getClassroom(Student student) {
+//        return classroomMappings.getForward(student);
+//    }
+//
+//    public Student getStudent(Classroom classroom) {
+//        return reverseMappings.getReverse(classroom);
+//    }
 }
